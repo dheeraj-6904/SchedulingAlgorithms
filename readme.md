@@ -25,3 +25,29 @@ This project implements and simulates two advanced CPU scheduling algorithms:
 | **Primary Goal** | Prevent Starvation | Differentiate Service for Process Types |
 | **Mechanism** | Dynamic Priority Increase | Static Queues with Different Algorithms |
 | **Best Use Case** | Systems with mixed-urgency tasks that all must run. | Systems with a clear distinction between interactive and batch jobs. |
+
+<h1 style='color:skyblue'>Results</h1>
+ ** shows context switches, ## shows idle time
+
+```Welcome to the Advanced CPU Scheduler Simulation!
+--- Running in Hardcoded Test Mode ---
+
+Running Multi-Level Queue Scheduler...
+
+Gantt Chart Data (PID, End Time):
+
+Gantt Chart:
+ ____ __________ ______ __ ____ ______ ______ ______ ____ ____ ________
+|_**_|____P1____|__**__|P2|_**_|__P1__|__**__|__P2__|_##_|_**_|___P2___|
+0    2          7     10 11   13     16     19     22   24   26       30
+
+--- Final Metrics Summary ---
+PID  Arrival CPU 1   I/O     CPU 2   Type      Response  Waiting   Turnaround
+-------------------------------------------------------------------------------
+1    0       5       4       3       FG(RR)    2         4         16
+2    2       4       2       4       BG(FCFS)  8         18        28
+-------------------------------------------------------------------------------
+Average:                                       5.00      11.00     22.00
+
+CPU Utilization: 53.33%
+```
